@@ -166,6 +166,15 @@ class Cesar:
         self.register_id = register_id if register_id is not None else str(uuid.uuid4())
         pass
 
+    def __eq__(self, other):
+        return self.hit_hat() == other.hit_hat()
+
+    def __le__(self, other):
+        return self.hit_hat() <= other.hit_hat()
+
+    def __lt__(self, other):
+        return self.hit_hat() < other.hit_hat()
+
     def garages_count(self):
         return len(self.garages)
 
@@ -216,7 +225,7 @@ if __name__ == "__main__":
     car_2 = Car(300, 11000)
     car_3 = Car(400, 11000)
     # print(car_2)
-    #print(car_2.number_replacement())
+    # print(car_2.number_replacement())
     # print(car_2)
     car_list = [car_1, car_2, car_3]
 
@@ -226,6 +235,7 @@ if __name__ == "__main__":
     # print(garage_1.hit_hat())
     # print("___________________________")
     Cesar_1 = Cesar("Maximus", [garage_1, garage_2])
+    Cesar_2 = Cesar("Ulius", [garage_2])
     # print(Cesar_1)
     # print(Cesar_1.garages_count())
     # print(Cesar_1.hit_hat())
@@ -241,3 +251,6 @@ if __name__ == "__main__":
 
     print(garage_1.cars)
     print(garage_2.cars)
+    print(Cesar_1 == Cesar_2)
+    print(Cesar_2.hit_hat())
+    print(Cesar_1.hit_hat())
