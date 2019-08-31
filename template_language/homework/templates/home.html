@@ -1,4 +1,7 @@
 {#  Inherit from layout #}
+{% extends "layout.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
 
 <main role="main" class="inner cover my-auto text-center">
     <h1 class="cover-heading">Top of IMDb.</h1>
@@ -12,6 +15,7 @@
 </main>
 <footer class="mastfoot mt-auto text-center">
     <div class="inner">
-        <p>Made by Eugene Zabolotny.</p>
+        <p>Modified by Max Poberezhnyk.</p>
     </div>
 </footer>
+{% endblock %}
